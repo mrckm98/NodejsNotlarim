@@ -1,0 +1,89 @@
+npm init -y ile node package.json dosyasi olusturur.
+sadece gelistirme sirasinda kullanilacak paketler npm i nodemon --save-dev seklinde indirilir
+
+
+node start scripti `npm start` ile cagirilir
+
+**************
+-------
+app.get
+-------
+Kullanıcıya bir sayfa göstermek, bir API'den veri dönmek veya belirli bir URL'e özel bir işlem yapmaksa app.get() (veya app.post(), app.put()) kullanın.
+***************
+---------
+app.use
+---------
+Eğer amacınız gelen veriyi JSON'a çevirmek (express.json()), CORS ayarları yapmak, log tutmak, oturum/yetki kontrolü yapmak veya statik dosyaları (resim, css) dışarı açmaksa app.use() kullanın.
+
+
+
+Burada en çok kafanı karıştırabilecek şey req.params ve req.body farkıdır:
+
+req.body: Büyük veriler içindir. Bir paket gibidir. 
+"Ekle" derken kelimenin tamamını (ingilizce+türkçe) bu paketin içine koyup göndeririz.
+----------------
+---------------
+QUERY PARAMETER 
+--------------
+req.params: URL içindeki değişkendir. 
+/sil/Apple dediğinde, Node.js oradaki Apple kelimesini hemen yakalar.
+
+app.use("/id/:userid", (){
+    console.log(req.params);
+    console.log(req.params.id);
+})
+Url uzerinde parametre islemi
+DIGER YONTEM
+http://localhost:3000/selamla?isim=Mehmet adresinde parametre cekmek
+const gelenIsim = req.query.isim; seklinde yapilir
+
+----fs module kullanirken sync ifadesi kullanildiginda senkron yani o anda 
+sadece o islemi yapar diger satirdaki kodlari calistirmaz.
+*json veriyi okurken JSON.parse(fs.readFileSync(..), utf-8); yazmazsan anlasilmaz kelimeler cikar
+*readFile = dosyayi okur
+*writeFile = dosya varsa uzerine yazar yoksa dosyayi olusturur.
+*appendfile = dosyanin direk  uzerine yazar
+
+---- app.use(express.json()); 
+gelen json isteklerini okumak icin kullanilan MIDDLEWARE
+
+
+------JSON.parse(data) string veriyi obje yada array e donusturur ama 
+icinde koseli yada suslu parantez olmali.
+
+*const jsonMetni = '{"isim": "Ahmet", "yas": 25}';
+parse kullanildiginda isim ve yas key olur. Ahmet ve 25 ise value olur.
+
+---------json.parse() => json dosyasindan alinan veriyi app.js de okumak icin 
+
+--------json.stringify() => elimizdeki objeyi todos.json dosyasina yazmak icin  kullanilir
+
+
+--- nodemon
+"nodemon app.js" ile terminalde calistirilir.
+
+
+---middleware
+res.end("anasayfa"); burda ekrana "anasayfa" yazar ve yanit islemi tamamen durur.
+res.send("<h1>anasayfa</h1>");
+
+diger middleware a gecerken next() yazilir.
+
+
+__dirname konumu gosterir
+__filename calistigi js dosyasinin tam konumu
+
+
+
+------------path-----
+
+const path = require("path");
+
+**res.sendFile(path.join(__dirname , "views/users","homepage.html")); 
+dosyanin kurulu oldugu yeri __dirname ile alir ve icindeki view ve users klasorune
+girer homepage.html sayfasini ekrana gonderir.
+
+
+---browser eklentisi
+ctrl+shift+p ile command pallette ac
+vs browser start 
