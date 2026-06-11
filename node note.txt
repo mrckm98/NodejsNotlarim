@@ -7,6 +7,11 @@ node start scripti `npm start` ile cagirilir
 ------------
 javascript
 ----------
+Modern JS
+//   ?.toLowerCase() soru isaretinden oncesi varsa ve yoksa calisir. hata vermez.
+const biletDurumu = req.query.bilet?.toLowerCase();
+
+
 FILTER METODU
     *****************
 const sayilar = [10, 20, 30, 40];
