@@ -4,6 +4,24 @@ sadece gelistirme sirasinda kullanilacak paketler npm i nodemon --save-dev sekli
 
 node start scripti `npm start` ile cagirilir
 
+------------
+javascript
+----------
+FILTER METODU
+    *****************
+const sayilar = [10, 20, 30, 40];
+// 30 değerini diziden çıkar
+const yeniSayilar = sayilar.filter(sayi => sayi !== 30);
+
+console.log(yeniSayilar); // [10, 20, 40]
+--------------------
+
+====================
+Sadece varlık/yokluk kontrolü ve hata fırlatma için: some()
+
+Elemanı bulup üzerinde işlem yapmak veya loglamak için: find()
+
+Bellekteki orijinal diziyi splice ile doğrudan değiştirmek istiyorsan: findIndex()
 **************
 -------
 app.get
@@ -44,8 +62,18 @@ sadece o islemi yapar diger satirdaki kodlari calistirmaz.
 *writeFile = dosya varsa uzerine yazar yoksa dosyayi olusturur.
 *appendfile = dosyanin direk  uzerine yazar
 
+**************************
 ---- app.use(express.json()); 
 gelen json isteklerini okumak icin kullanilan MIDDLEWARE
+***************************
+
+=========
+JSON post
+------
+res.json(siraliListe);
++siraliListe degiskenini json olarak ekrana verir.
+==================================
+
 
 
 ------JSON.parse(data) string veriyi obje yada array e donusturur ama 

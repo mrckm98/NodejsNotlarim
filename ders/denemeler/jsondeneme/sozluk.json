@@ -1,0 +1,22 @@
+[
+  {
+    "en": "book",
+    "tr": "kitap",
+    "ogrenildi": false
+  },
+  {
+    "en": "blue",
+    "tr": "mavi",
+    "ogrenildi": true
+  },
+  {
+    "en": "one",
+    "tr": "bir",
+    "ogrenildi": true
+  },
+  {
+    "en": "yellow",
+    "tr": "sari",
+    "ogrenildi": true
+  }
+]

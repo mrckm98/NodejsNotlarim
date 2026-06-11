@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crud deneme</title>
+</head>
+<body>
+    <div class="card">
+        <input type="text" id="en" placeholder="english">
+        <input type="text" id="tr" placeholder="Turkce">
+        <button onclick="kelimeEkle()">Ekle</button>
+        <hr>
+        <div id="kelimeListesi"></div>    
+        
+    </div>
+    <script>
+        async function kelimeleriGetir() {
+            const yanit = await fetch('/kelimeler');
+            const veriler = await yanit.json();
+            const liste = document.getElementById('kelimeListesi');
+            liste.innerHTML ='';
+            veriler.forEach(k => {
+                liste.innerHTML +=
+                `<div class="word-item">
+                   <span><strong>${k.en}</strong>: ${k.tr}</span>
+                   <button class="delete-btn" onclick="kelimeSil('${k.en}')">Sil</button>
+                </div>`;
+            });
+        }
+        async function kelimeEkle() {
+            const ing = document.getElementById('en').value;
+            const tr = document.getElementById('tr').value;
+
+            await fetch('/ekle', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ en: ing, tr: tr })
+            });
+
+            kelimeleriGetir(); // Listeyi güncelle
+        }
+        async function kelimeSil(ingilizce) {
+            await fetch('/sil/' + ingilizce);
+            kelimeleriGetir(); // Listeyi güncelle
+        }
+
+        kelimeleriGetir();
+
+    </script>
+</body>
+</html>
