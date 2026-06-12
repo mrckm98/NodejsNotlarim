@@ -120,3 +120,8 @@ girer homepage.html sayfasini ekrana gonderir.
 ---browser eklentisi
 ctrl+shift+p ile command pallette ac
 vs browser start 
+
+------------------------
+mongodb 
+mehmet
+mehmet27
