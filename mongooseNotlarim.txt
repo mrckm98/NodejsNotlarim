@@ -1,0 +1,15 @@
+mongoose.connect(MONGO_URI); 
+ile kendi hesabimiza istedigimiz yetkili bir sekilde baglaniyoruz.
+
+
+
+new mongoose.Schema ile verilerin kurali olusturulur.
+const kelimeKayit = new mongoose.Schema({
+        ingilizce:String,
+        turkce:String,
+        eklenmeTarihi: {type:Date, default:Date.now}
+    })
+
+
+Kelime adinda veritabani odasi aciliyor
+const kelimeModeli = mongoose.model('Kelime', kelimeKayit);

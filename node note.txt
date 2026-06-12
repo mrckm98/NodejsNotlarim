@@ -12,6 +12,13 @@ Modern JS
 const biletDurumu = req.query.bilet?.toLowerCase();
 
 
+---------------
+THEN TRY
+.then() (Promise Zinciri): Klasik Promise yapısıdır. Başarılı durumlar için .then(), hatalar için .catch() fonksiyonları birbirine zincirlenerek kullanılır.
+
+try...catch (Async/Await): Modern JavaScript ile gelen bu yapı, asenkron kodu sanki senkronmuş (yukarıdan aşağıya düz bir sırayla çalışıyorsa) gibi yazmanızı sağlar. await anahtar kelimesiyle birlikte kullanılır.
+----------------
+
 FILTER METODU
     *****************
 const sayilar = [10, 20, 30, 40];
