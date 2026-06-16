@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node server.js",
+    "dev" : "node server.js"
   },
   "keywords": [],
   "author": "",
@@ -13,9 +14,10 @@
   "type": "commonjs",
   "dependencies": {
     "bcryptjs": "^3.0.3",
+    "mongoose": "^9.7.0",
     "express": "^5.2.1"
   },
   "devDependencies": {
-    "mongoose": "^9.7.0"
+    "nodemon": "^3.1.14"
   }
 }

@@ -1,5 +1,10 @@
 npm init -y ile node package.json dosyasi olusturur.
 sadece gelistirme sirasinda kullanilacak paketler npm i nodemon --save-dev seklinde indirilir
+yada npm i nodemon -D kisa yazlisi
+
+mongoose => mongodb kullanmak icin kullanilan npm kutuphanesi, mongodb npm kutuphanesinden daha iyi oldugu icin bu kullanilir.
+
+bcryptjs => sifreleri hashlemek icin kullanilan npm kutuphanesi
 
 
 node start scripti `npm start` ile cagirilir
