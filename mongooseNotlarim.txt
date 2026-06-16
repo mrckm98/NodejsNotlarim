@@ -11,5 +11,11 @@ const kelimeKayit = new mongoose.Schema({
     })
 
 
+
+findByIdAndUpdate() in alacagi bazi parametreler
+*upsert:true
+*runValidators:true
+*select:'ingilizce'
+--------------
 Kelime adinda veritabani odasi aciliyor
 const kelimeModeli = mongoose.model('Kelime', kelimeKayit);
